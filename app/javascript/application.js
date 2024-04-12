@@ -2,8 +2,10 @@
 //= require jquery
 //= require jquery_ujs
 
-import "@hotwired/turbo-rails"
-import "controllers"
+import "@hotwired/turbo-rails";
+import "controllers";
+import "./controllers/circle_ci";
+import "./controllers/github_ci";
 
 $(document).on('turbo:load', function() {
   // handle lg nav dropdown item

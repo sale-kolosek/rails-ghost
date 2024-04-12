@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get '/about_us', to: 'pages#about_us'
   get '/pricing', to: 'pages#pricing'
-  get '/vs_circleci', to: 'pages#vs_circle_ci'
-  get '/vs_githubci', to: 'pages#vs_github_ci'
-  get '/vs_jenkins', to: 'pages#vs_jenkins'
+  get '/circle_ci', to: 'pages#circle_ci'
+  get '/github_ci', to: 'pages#github_ci'
+  get '/jenkins_ci', to: 'pages#jenkins_ci'
 end
