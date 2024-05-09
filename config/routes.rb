@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   get '/circle_ci', to: 'pages#circle_ci'
   get '/github_ci', to: 'pages#github_ci'
   get '/jenkins_ci', to: 'pages#jenkins_ci'
+
+  match '*unmatched', to: 'application#route_not_found', via: :all
 end
