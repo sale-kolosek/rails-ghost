@@ -11,9 +11,9 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <%= stylesheet_link_tag "application", media: 'all', "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-    <%= render 'layouts/partials/scripts_header' %>
+    <%#= stylesheet_link_tag "application", media: 'all', "data-turbo-track": "reload" %>
+    <%#= javascript_importmap_tags %>
+    <%#= render 'layouts/partials/scripts_header' %>
   </head>
 
   <body class="bg-gray-900">
@@ -23,6 +23,6 @@
       <%= yield %>
       <%= render 'layouts/partials/footer' %>
     </div>
-    <%= render 'layouts/partials/scripts_footer' %>
+    <%#= render 'layouts/partials/scripts_footer' %>
   </body>
 </html>
