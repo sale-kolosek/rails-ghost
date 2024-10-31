@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+	before_action :set_settings
+
 	def post
 		@posts = ghost_client.get_posts.reverse
 		@post = request.path == '/docs' ? 
@@ -22,5 +24,9 @@ class PagesController < ApplicationController
 
 	def ghost_client
 		@ghost_client ||= GhostClient.new
+	end
+
+	def set_settings
+		@settings = ghost_client.settings
 	end
 end

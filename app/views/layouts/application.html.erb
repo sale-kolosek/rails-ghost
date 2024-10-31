@@ -17,6 +17,7 @@
 
     <%#= stylesheet_link_tag "application", media: 'all', "data-turbo-track": "reload" %>
     <%#= javascript_importmap_tags %>
+    <%= raw @settings['codeinjection_head'] %>
     <%= render 'layouts/partials/scripts_header' %>
   </head>
 
@@ -32,6 +33,6 @@
       <%= image_tag 'orange-footer.svg', class: 'absolute right-0 bottom-0', alt: '' %>
       <%= image_tag 'blue-footer.svg', class: 'absolute right-0 bottom-0', alt: '' %>
     </div>
-    <%#= render 'layouts/partials/scripts_footer' %>
+    <%= raw @settings['codeinjection_foot'] %>
   </body>
 </html>

@@ -15,6 +15,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <%= raw @settings['codeinjection_head'] %>
   </head>
 
   <body class="post-template tag-tutorial tag-hash-docs-2 tag-hash-docs min-h-screen flex flex-col antialiased overflow-x-hidden text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-900 [&amp;.has-modal]:h-screen [&amp;.has-modal]:overflow-hidden sal-disabled">
@@ -92,5 +94,6 @@
 
       <%= render 'layouts/partials/footer_ghost' %>
     </div>
+    <%= raw @settings['codeinjection_foot'] %>
   </body>
 </html>

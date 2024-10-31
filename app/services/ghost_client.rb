@@ -17,10 +17,22 @@ class GhostClient
   def get_posts
     begin
       resp = HTTParty.get(
-        "#{HOST_URL}/content/posts/?key=#{CONTENT_API_KEY}&include=authors,tags"
+        "#{HOST_URL}/content/posts?key=#{CONTENT_API_KEY}&include=authors,tags"
       )
 
       JSON.parse(resp.body)['posts']
+    rescue => e
+      Rails.logger.error e.message
+    end
+  end
+
+  def settings
+    begin
+      resp = HTTParty.get(
+        "#{HOST_URL}/content/settings?key=#{CONTENT_API_KEY}"
+      )
+
+      JSON.parse(resp.body)['settings']
     rescue => e
       Rails.logger.error e.message
     end
