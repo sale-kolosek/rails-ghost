@@ -10,8 +10,6 @@ gem 'dotenv'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-gem 'pg'
-
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
