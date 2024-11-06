@@ -25,16 +25,16 @@
     </style>
 
     <%= raw @settings['codeinjection_head'] %>
-    <%= render 'layouts/partials/scripts_header' %>
-    <%= render 'layouts/partials/pricing_script' if action_name == 'pricing' %>
+    <%= render 'rubyci/layouts/partials/scripts_header' %>
+    <%= render 'rubyci/layouts/partials/pricing_script' if action_name == 'pricing' %>
   </head>
 
   <body class="bg-gray-900 relative">
     <%#= render 'layouts/partials/top' %>
-    <%= render 'layouts/partials/header' %>
+    <%= render 'rubyci/layouts/partials/header' %>
     <div class="page-wrapper">
       <%= yield %>
-      <%= render 'layouts/partials/footer' %>
+      <%= render 'rubyci/layouts/partials/footer' %>
     </div>
     <%= render 'layouts/partials/features_script' if action_name == 'features' %>
     <%= raw @settings['codeinjection_foot'] %>
