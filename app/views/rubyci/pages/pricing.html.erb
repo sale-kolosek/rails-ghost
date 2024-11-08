@@ -13,9 +13,9 @@
                 <span>145 Reviews</span>
               </span>
             </div>
-            <p class="mt-2 text-4xl font-medium tracking-tight text-white sm:text-6xl">Pricing plans for teams of all sizes</p>
+            <p class="mt-2 text-4xl font-medium tracking-tight text-white sm:text-6xl"><%= phrase('pricing-header') %></p>
           </div>
-          <p class="mx-auto mt-6 max-w-3xl text-center text-xl leading-6 text-white">Choose from our flexible pricing plans. We charge based on speed increases. The more speed, the less per each we charge.</p>
+          <p class="mx-auto mt-6 max-w-3xl text-center text-xl leading-6 text-white"><%= phrase('pricing-subheader') %></p>
           <div class="mt-16 pb-8 flex justify-center">
             <p class="text-xl font-normal text-white">Monthly Prices</p>
           </div>
@@ -278,7 +278,7 @@
   </section>
   <section id="pricing-reliable-support" class="bg-gray-950">
     <div class="mx-2 px-2 xl:mx-auto border border-yellow-500 rounded-2xl py-8 max-w-7xl xl:px-8 lg:px-12">
-      <h2 class="text-center text-2xl font-normal leading-8 text-white">Reliable support, trusted by our developers</h2>
+      <h2 class="text-center text-2xl font-normal leading-8 text-white"><%= phrase('support-section-title') %></h2>
       <div class="mx-auto mt-10 flex flex-col md:flex-row justify-around items-center lg:mx-0 lg:max-w-none">
         <div class="mt-8 flex flex-col md:flex-row items-center gap-2 text-sm md:text-lg font-normal text-white text-center">
           <%= image_tag 'shield-check.svg', class: 'h7 w-6', alt: "" %>
@@ -789,7 +789,7 @@
   </section>
   <section id="pricing-faq" class="bg-gradient-to-b from-slate-900 to-gray-950 py-16">
     <div class="flex items-center justify-center flex-col gap-y-2 py-5">
-      <h2 class="text-3xl font-medium text-white">Frequent Ask Questions</h2>
+      <h2 class="text-3xl font-medium text-white"><%= phrase('questions-section-title') %></h2>
     </div>
     <div class="w-full px-7 md:px-10 xl:px-2 py-4">
       <div class="mx-auto w-full max-w-4xl">

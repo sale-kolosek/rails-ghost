@@ -9,6 +9,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= javascript_include_tag "application" %>
+
+    <%= stylesheet_link_tag "application" %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <style>
@@ -30,6 +33,9 @@
   </head>
 
   <body class="bg-gray-900 relative">
+    <div style="background-color: white;">
+      <%= render 'phrasing/initializer' %>
+    </div>
     <%#= render 'layouts/partials/top' %>
     <%= render 'rubyci/layouts/partials/header' %>
     <div class="page-wrapper">
