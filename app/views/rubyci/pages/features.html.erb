@@ -3,22 +3,16 @@
     <div class="relative overflow-hidden -mb-1 bg-slate-950">
       <div class="mx-auto max-w-7xl px-6 mt-16 lg:flex lg:px-8">
         <div class="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8 z-10">
-          <h1 class="text-4xl font-normal tracking-tight text-white sm:text-5xl">Committer Analysis provides a comprehensive view of all contributors in one place</h1>
+          <h1 class="text-4xl font-normal tracking-tight text-white sm:text-5xl"><%= phrase('rubyci_features_1_builds_title') %></h1>
           <ul class="space-y-4 pt-6">
             <li class="text-white flex text-lg font-normal items-start">
-              <p>Collaborative feature for tracking productivity and code quality - analysis of every committer.</p>
-            </li>
-            <li class="text-white flex text-lg font-normal items-start">
-              <p>Managers and CTOs gain better control over the development process, enabling data-driven decisions to enhance overall efficiency.</p>
-            </li>
-            <li class="text-white flex text-lg font-normal items-start">
-              <p>It ensures cleaner code and a healthier application by tracking individual commit trends and performance.</p>
+              <p><%= phrase('rubyci_features_1_builds_description') %></p>
             </li>
           </ul>
         </div>
         <div class="relative mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
           <div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none max-h-fit">
-            <%= image_tag 'hero-features-image.webp', class: 'max-h-[85%] aspect-[768/368] lg:aspect-[1032/495]', alt: "App screenshot" %>
+            <%= image_tag 'rubyci/builds_list.png', class: 'max-h-[85%] aspect-[768/368] lg:aspect-[1032/495]', alt: "App screenshot", width: '1200px' %>
           </div>
         </div>
       </div>
@@ -62,19 +56,16 @@
           <div class="sm:px-6 lg:px-0 order-last lg:order-first">
             <div class="relative px-6 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-0 sm:pr-0 lg:mx-0 lg:max-w-none">
               <div class="relative mx-auto max-w-fit sm:mx-0">
-                <%=image_tag "feature-1.webp", alt: "Product screenshot", width: "623", height: "464", class: "relative mx-auto z-[1]"%>
+                <%=image_tag "rubyci/rspec_plugin.png", alt: "Product screenshot", width: "623", height: "464", class: "relative mx-auto z-[1]"%>
               </div>
             </div>
           </div>
           <div class="px-6 lg:px-0 my-auto">
             <div class="mx-auto lg:mx-0">
-              <p class="mt-2 text-3xl font-medium tracking-tight text-white sm:text-4xl">Committer Analysis provides a comprehensive view of all contributors in one place</p>
+              <p class="mt-2 text-3xl font-medium tracking-tight text-white sm:text-4xl"><%= phrase('rubyci_features_1_rspec_title') %></p>
               <ol class="space-y-3 pt-16">
                 <li class="text-white flex text-lg pb-6 items-start">
-                  Collaborative feature for tracking productivity and code quality - analysis of every committer.
-                </li>
-                <li class="text-white flex text-lg pb-6 items-start">
-                  Managers and CTOs gain better control over the development process, enabling data-driven decisions to enhance overall efficiency.
+                  <%= phrase('rubyci_features_1_rspec_description') %>
                 </li>
               </ol>
             </div>
@@ -90,19 +81,16 @@
           <div class="sm:px-6 lg:px-0 order-last">
             <div class="relative px-6 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-0 sm:pr-0 lg:mx-0 lg:max-w-none">
               <div class="relative mx-auto max-w-fit sm:mx-0">
-                <%=image_tag "feature-1.webp", alt: "Product screenshot", width: "623", height: "464", class: "relative mx-auto z-[1]"%>
+                <%= image_tag "rubyci/simplecov_plugin.png", alt: "Product screenshot", width: "623", height: "464", class: "relative mx-auto z-[1]"%>
               </div>
             </div>
           </div>
           <div class="px-6 lg:px-0 my-auto">
             <div class="mx-auto lg:mx-0">
-              <p class="mt-2 text-3xl font-medium tracking-tight text-white sm:text-4xl">Committer Analysis provides a comprehensive view of all contributors in one place</p>
+              <p class="mt-2 text-3xl font-medium tracking-tight text-white sm:text-4xl"><%= phrase('rubyci_features_1_simplecov_title') %></p>
               <ol class="space-y-3 pt-16">
                 <li class="text-white flex text-lg pb-6 items-start">
-                  Collaborative feature for tracking productivity and code quality - analysis of every committer.
-                </li>
-                <li class="text-white flex text-lg pb-6 items-start">
-                  Managers and CTOs gain better control over the development process, enabling data-driven decisions to enhance overall efficiency.
+                  <%= phrase('rubyci_features_1_simplecov_description') %>
                 </li>
               </ol>
             </div>
@@ -118,22 +106,16 @@
           <div class="sm:px-6 lg:px-0 order-last lg:order-first">
             <div class="relative px-6 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-0 sm:pr-0 lg:mx-0 lg:max-w-none">
               <div class="relative mx-auto max-w-fit sm:mx-0">
-                <%=image_tag "feature-1.webp", alt: "Product screenshot", width: "623", height: "464", class: "relative mx-auto z-[1]"%>
+                <%=image_tag "rubyci/rubycritic_plugin.png", alt: "Product screenshot", width: "623", height: "464", class: "relative mx-auto z-[1]"%>
               </div>
             </div>
           </div>
           <div class="px-6 lg:px-0 my-auto">
             <div class="mx-auto lg:mx-0">
-              <p class="mt-2 text-3xl font-medium tracking-tight text-white sm:text-4xl">Committer Analysis provides a comprehensive view of all contributors in one place</p>
+              <p class="mt-2 text-3xl font-medium tracking-tight text-white sm:text-4xl"><%= phrase('rubyci_features_1_rubycritic_title') %></p>
               <ol class="space-y-3 pt-16">
                 <li class="text-white flex text-lg pb-6 items-start">
-                  Collaborative feature for tracking productivity and code quality - analysis of every committer.
-                </li>
-                <li class="text-white flex text-lg pb-6 items-start">
-                  Managers and CTOs gain better control over the development process, enabling data-driven decisions to enhance overall efficiency.
-                </li>
-                <li class="text-white flex text-lg pb-6 items-start">
-                  It ensures cleaner code and a healthier application by tracking individual commit trends and performance.
+                  <%= phrase('rubyci_features_1_rubycritic_description') %>
                 </li>
               </ol>
             </div>
@@ -149,22 +131,16 @@
           <div class="sm:px-6 lg:px-0 order-last">
             <div class="relative px-6 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-0 sm:pr-0 lg:mx-0 lg:max-w-none">
               <div class="relative mx-auto max-w-fit sm:mx-0">
-                <%=image_tag "feature-1.webp", alt: "Product screenshot", width: "623", height: "464", class: "relative mx-auto z-[1]"%>
+                <%=image_tag "rubyci/bundler_audit_plugin.png", alt: "Product screenshot", width: "623", height: "464", class: "relative mx-auto z-[1]"%>
               </div>
             </div>
           </div>
           <div class="px-6 lg:px-0 my-auto">
             <div class="mx-auto lg:mx-0">
-              <p class="mt-2 text-3xl font-medium tracking-tight text-white sm:text-4xl">Committer Analysis provides a comprehensive view of all contributors in one place</p>
+              <p class="mt-2 text-3xl font-medium tracking-tight text-white sm:text-4xl"><%= phrase('rubyci_features_1_bundler_audit_title') %></p>
               <ol class="space-y-3 pt-16">
                 <li class="text-white flex text-lg pb-6 items-start">
-                  Collaborative feature for tracking productivity and code quality - analysis of every committer.
-                </li>
-                <li class="text-white flex text-lg pb-6 items-start">
-                  Managers and CTOs gain better control over the development process, enabling data-driven decisions to enhance overall efficiency.
-                </li>
-                <li class="text-white flex text-lg pb-6 items-start">
-                  It ensures cleaner code and a healthier application by tracking individual commit trends and performance.
+                  <%= phrase('rubyci_features_1_bundler_audit_description') %>
                 </li>
               </ol>
             </div>
@@ -180,22 +156,16 @@
           <div class="sm:px-6 lg:px-0 order-last lg:order-first">
             <div class="relative px-6 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-0 sm:pr-0 lg:mx-0 lg:max-w-none">
               <div class="relative mx-auto max-w-fit sm:mx-0">
-                <%=image_tag "feature-1.webp", alt: "Product screenshot", width: "623", height: "464", class: "relative mx-auto z-[1]"%>
+                <%=image_tag "rubyci/brakeman_plugin.png", alt: "Product screenshot", width: "623", height: "464", class: "relative mx-auto z-[1]"%>
               </div>
             </div>
           </div>
           <div class="px-6 lg:px-0 my-auto">
             <div class="mx-auto lg:mx-0">
-              <p class="mt-2 text-3xl font-medium tracking-tight text-white sm:text-4xl">Committer Analysis provides a comprehensive view of all contributors in one place</p>
+              <p class="mt-2 text-3xl font-medium tracking-tight text-white sm:text-4xl"><%= phrase('rubyci_features_1_brakeman_title') %></p>
               <ol class="space-y-3 pt-16">
                 <li class="text-white flex text-lg pb-6 items-start">
-                  Collaborative feature for tracking productivity and code quality - analysis of every committer.
-                </li>
-                <li class="text-white flex text-lg pb-6 items-start">
-                  Managers and CTOs gain better control over the development process, enabling data-driven decisions to enhance overall efficiency.
-                </li>
-                <li class="text-white flex text-lg pb-6 items-start">
-                  It ensures cleaner code and a healthier application by tracking individual commit trends and performance.
+                  <%= phrase('rubyci_features_1_brakeman_description') %>
                 </li>
               </ol>
             </div>
@@ -211,22 +181,16 @@
           <div class="sm:px-6 lg:px-0 order-last">
             <div class="relative px-6 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-0 sm:pr-0 lg:mx-0 lg:max-w-none">
               <div class="relative mx-auto max-w-fit sm:mx-0">
-                <%=image_tag "feature-1.webp", alt: "Product screenshot", width: "623", height: "464", class: "relative mx-auto z-[1]"%>
+                <%=image_tag "rubyci/jest_plugin.png", alt: "Product screenshot", width: "623", height: "464", class: "relative mx-auto z-[1]"%>
               </div>
             </div>
           </div>
           <div class="px-6 lg:px-0 my-auto">
             <div class="mx-auto lg:mx-0">
-              <p class="mt-2 text-3xl font-medium tracking-tight text-white sm:text-4xl">Committer Analysis provides a comprehensive view of all contributors in one place</p>
+              <p class="mt-2 text-3xl font-medium tracking-tight text-white sm:text-4xl"><%= phrase('rubyci_features_1_jest_title') %></p>
               <ol class="space-y-3 pt-16">
                 <li class="text-white flex text-lg pb-6 items-start">
-                  Collaborative feature for tracking productivity and code quality - analysis of every committer.
-                </li>
-                <li class="text-white flex text-lg pb-6 items-start">
-                  Managers and CTOs gain better control over the development process, enabling data-driven decisions to enhance overall efficiency.
-                </li>
-                <li class="text-white flex text-lg pb-6 items-start">
-                  It ensures cleaner code and a healthier application by tracking individual commit trends and performance.
+                  <%= phrase('rubyci_features_1_jest_description') %>
                 </li>
               </ol>
             </div>
