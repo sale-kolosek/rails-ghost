@@ -11,6 +11,14 @@ Rails.application.routes.draw do
 
   get '/blog', to: 'pages#blogs'
 
+  get '/phrasing', to: 'phrasing#index'
+  get '/phrasing/:id/edit', to: 'phrasing#edit'
+  get '/phrasing/help', to: 'phrasing#help'
+  get '/phrasing/import_export', to: 'phrasing#import_export'
+  get '/phrasing/download', to: 'phrasing#download'
+  patch '/phrasing/:id/update', to: 'phrasing#update'
+  delete '/phrasing/:id/destroy', to: 'phrasing#destroy'
+
   constraints host: %w[ruby.ci fast.ci] do
     get '/about_us', to: 'pages#about_us'
     get '/pricing', to: 'pages#pricing'
