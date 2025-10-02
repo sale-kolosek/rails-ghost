@@ -13,6 +13,14 @@
     <%= stylesheet_link_tag '/css/ghost.min.css', media: 'all', "data-turbo-track": "reload" %>
 
     <%= raw @settings['codeinjection_head'] %>
+    <style>
+      .kg-btn-accent {
+        background-color: #ff0095;
+        display: inline-block;
+        width: 100%;
+        text-decoration: none;
+      }
+    </style>
   </head>
 
   <body class="post-template tag-tutorial tag-hash-docs-2 tag-hash-docs min-h-screen flex flex-col antialiased overflow-x-hidden text-gray-900 bg-white dark:text-gray-400 dark:bg-gray-900 [&amp;.has-modal]:h-screen [&amp;.has-modal]:overflow-hidden sal-disabled">
