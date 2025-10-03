@@ -18,16 +18,18 @@
       <% end %>
     </p>    
 
-    <figure class="max-w-[1200px] mx-auto mt-10 xl:mt-16 has-links ">
-        <div class="relative rounded-md lg:rounded-xl overflow-hidden bg-gray-50 dark:bg-gray-800 
-                    after:absolute after:top-0 after:left-0 after:w-full after:h-full after:ring-1 after:ring-inset after:ring-gray-900/5 dark:after:ring-gray-50/5 after:rounded-md lg:after:rounded-xl 
-                        aspect-w-16 aspect-h-9 
-                    ">
-            <% if @post['feature_image'].present? %>
-              <img class="!m-0 object-cover lazyautosizes ls-is-cached lazyloaded" data-sizes="auto" alt="<%= @post['title'] %>" src="<%= @post['feature_image'].gsub("#{@host}", "blog.#{@host}") %>" sizes="541px">
-            <% end %>
-        </div>
-    </figure>
+    <% if @post['feature_image'].present? %>
+      <figure class="max-w-[1200px] mx-auto mt-10 xl:mt-16 has-links ">
+          <div class="relative rounded-md lg:rounded-xl overflow-hidden bg-gray-50 dark:bg-gray-800 
+                      after:absolute after:top-0 after:left-0 after:w-full after:h-full after:ring-1 after:ring-inset after:ring-gray-900/5 dark:after:ring-gray-50/5 after:rounded-md lg:after:rounded-xl 
+                          aspect-w-16 aspect-h-9 
+                      ">
+              <% if @post['feature_image'].present? %>
+                <img class="!m-0 object-cover lazyautosizes ls-is-cached lazyloaded" data-sizes="auto" alt="<%= @post['title'] %>" src="<%= @post['feature_image'] %>" sizes="541px">
+              <% end %>
+          </div>
+      </figure>
+    <% end %>
     </div>
     <div class="">
       <div class="w-full max-w-3xl mx-auto ">
@@ -37,7 +39,7 @@
           </h2>  
                               
           <div class="content lg:content-lg mb-16 sm:mb-20 md:mb-28  has-full has-wide ">
-            <%= raw @post['html'].gsub("#{@host}", "blog.#{@host}") %>
+            <%= raw @post['html'] %>
           </div>
         </div>
       </div>
