@@ -7,6 +7,8 @@ gem "rails", "~> 7.1.3"
 
 gem 'pg'
 
+gem 'sqlite3'
+
 gem 'dotenv'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
