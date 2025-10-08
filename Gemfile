@@ -51,8 +51,6 @@ gem "jquery-rails"
 
 gem 'sassc-rails'
 
-gem 'tailwindcss-rails'
-
 gem 'httparty'
 
 gem 'sitemap_generator'
