@@ -318,7 +318,7 @@ DEPENDENCIES
   selenium-webdriver
   sitemap_generator
   sprockets-rails
-  sqlite3
+  sqlite3 (>= 2.7)
   stimulus-rails
   tailwindcss-rails
   turbo-rails
