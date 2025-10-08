@@ -7,11 +7,13 @@ gem "rails", "~> 7.1.3"
 
 db_adapter = ENV.fetch("DB_ADAPTER", "postgresql")
 
-if ENV.fetch("DB_ADAPTER", "postgresql") == "postgresql"
+group :development, :test do
   gem "pg"
 end
 
-gem "sqlite3"
+group :production do
+  gem "sqlite3"
+end
 
 gem 'dotenv'
 
