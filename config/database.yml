@@ -1,7 +1,6 @@
 default: &default
-  adapter: <%= ENV.fetch("DB_ADAPTER", "postgresql") %>
+  adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS", 5) %>
 
 development:
   <<: *default
@@ -13,8 +12,4 @@ test:
 
 production:
   <<: *default
-  <% if ENV.fetch("DB_ADAPTER", "postgresql") == "sqlite3" %>
-  database: <%= ENV.fetch("SQLITE_PATH", "db/production.sqlite3") %>
-  <% else %>
-  url: <%= ENV["DATABASE_URL"] %>
-  <% end %>
+  url: <%= ENV['DATABASE_URL'] %>

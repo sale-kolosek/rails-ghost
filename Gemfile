@@ -7,7 +7,7 @@ gem "rails", "~> 7.1.3"
 
 #db_adapter = ENV.fetch("DB_ADAPTER", "postgresql")
 
-gem "pg"
+gem 'pg'
 
 gem 'dotenv'
 
