@@ -24,10 +24,16 @@ class PagesController < ApplicationController
 			ghost_client.get_posts.reverse
 		end
 
-		@posts = ghost_client.get_posts.reverse unless @posts.present?
+		posts = ghost_client.get_posts
+		@posts = posts.is_a?(Array) ? posts.reverse : []
 
 		@post = request.path == '/docs' ? 
 			@posts.select {|p| p['custom_template'] == 'custom-documentation'}.first : ghost_client.get_post(request.path)
+
+		unless @post.is_a?(Hash)
+			Rails.logger.error("Invalid @post value for path=#{request.path}: #{@post.inspect}")
+			render plain: "Post not found", status: :not_found and return
+		end
 
 		if @post['custom_template'] == 'custom-documentation'
 			render "#{@app}/pages/post", layout: "#{@app}/layouts/docs"
