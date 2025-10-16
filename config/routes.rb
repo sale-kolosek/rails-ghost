@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/phrasing/help', to: 'phrasing#help'
   get '/phrasing/import_export', to: 'phrasing#import_export'
   get '/phrasing/download', to: 'phrasing#download'
-  patch '/phrasing/:id/update', to: 'phrasing#update'
+  patch '/phrasing/:id', to: 'phrasing#update'
   delete '/phrasing/:id/destroy', to: 'phrasing#destroy'
 
   constraints host: %w[ruby.ci fast.ci] do

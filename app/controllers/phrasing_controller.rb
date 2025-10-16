@@ -75,9 +75,18 @@ class PhrasingController < ApplicationController
   def phrase_update
     phrase = PhrasingPhrase.find(params[:id])
     phrase.value = params[:phrasing_phrase][:value]
-    phrase.save!
 
-    redirect_to phrasing_phrases_path, notice: "#{phrase.key} updated!"
+    if phrase.save
+      respond_to do |format|
+        format.json { render json: { status: "ok", id: phrase.id, value: phrase.value } }
+        format.html { redirect_to phrasing_phrases_path, notice: "#{phrase.key} updated!" }
+      end
+    else
+      respond_to do |format|
+        format.json { render json: { status: "error", errors: phrase.errors.full_messages }, status: :unprocessable_entity }
+        format.html { redirect_to phrasing_phrases_path, alert: "Failed to update #{phrase.key}" }
+      end
+    end
   end
 
   def phrasing_phrases
