@@ -48,5 +48,8 @@ Rails.application.routes.draw do
 
   get '/blog/:slug', to: redirect { |path_params, req| "/#{path_params[:slug]}" }
 
+  get '/sitemap.xml.gz', to: 'sitemaps#show', format: :xml
+  get '/robots.txt', to: 'robots#show'
+
   match '*path', to: 'pages#post', via: :get
 end
