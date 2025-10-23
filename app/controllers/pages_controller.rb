@@ -12,7 +12,11 @@ class PagesController < ApplicationController
 		else
 			@page = ghost_client.get_page(request.path)
 
-			render layout: "#{@app}/layouts/blog"
+			if @page.present?
+        render layout: "#{@app}/layouts/blog"
+      else
+        redirect_to blog_path
+      end
 		end
 	end
 

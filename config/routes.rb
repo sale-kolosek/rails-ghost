@@ -21,9 +21,8 @@ Rails.application.routes.draw do
   get '/phrasing/download', to: 'phrasing#download'
   patch '/phrasing/:id', to: 'phrasing#update'
   delete '/phrasing/:id/destroy', to: 'phrasing#destroy'
-
+  
   get '/blog', to: 'blogs#index'
-  get '/blog/', to: redirect('/blog')
   get '/blog/:slug', to: 'blogs#show'
   get '/sitemap.xml.gz', to: 'sitemaps#show', format: :xml
   get '/robots.txt', to: 'robots#show'
