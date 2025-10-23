@@ -1,4 +1,10 @@
 class GhostClient
+  attr_reader :host
+
+  def initialize(host)
+    @host = host
+  end
+
   def get_pages(page = 1)
     begin
       resp = HTTParty.get(
@@ -12,24 +18,10 @@ class GhostClient
     end
   end
 
-  def get_page(slug)
+  def get_post(slug)
     begin
       resp = HTTParty.get(
-        "#{host_url}/content/pages/slug#{slug}?key=#{api_key}"
-      )
-
-      JSON.parse(resp.body)['pages']&.first
-    rescue => e
-      Rails.logger.error e.message
-      nil
-    end
-  end
-
-
-  def get_post(path)
-    begin
-      resp = HTTParty.get(
-        "#{host_url}/content/posts/slug/#{path.sub(/^\/blog\//, '')}?key=#{api_key}&include=authors,tags"
+        "#{host_url}/content/posts/slug#{slug}?key=#{api_key}&include=authors,tags"
       )
 
       JSON.parse(resp.body)['posts'].first
@@ -39,7 +31,7 @@ class GhostClient
     end
   end
 
-  def get_posts(page)
+  def get_posts(page = 1)
     begin
       resp = HTTParty.get(
         "#{host_url}/content/posts?key=#{api_key}&include=authors,tags&page=#{page}"
@@ -66,10 +58,30 @@ class GhostClient
   private
 
   def host_url
-    ENV['GHOST_API_URL']
+    if host == 'kolosek.com'
+      ENV['GHOST_API_URL_KOLOSEK']
+    elsif host == 'fast.ci'
+      ENV['GHOST_API_URL_FAST_CI']
+    elsif host == 'litetracker.com'
+      ENV['GHOST_API_URL_LITETRACKER']
+    elsif host == 'demo.litetracker.com'
+      ENV['GHOST_API_URL_LITETRACKER']
+    else
+      ENV['GHOST_API_URL']
+    end
   end
 
   def api_key
-    ENV['GHOST_CONTENT_API_KEY']
+    if host == 'kolosek.com'
+      ENV['GHOST_CONTENT_API_KEY_KOLOSEK']
+    elsif host == 'fast.ci'
+      ENV['GHOST_CONTENT_API_KEY_FAST_CI']
+    elsif host == 'litetracker.com'
+      ENV['GHOST_CONTENT_API_KEY_LITETRACKER']
+    elsif host == 'demo.litetracker.com'
+      ENV['GHOST_CONTENT_API_KEY_LITETRACKER']
+    else
+      ENV['GHOST_CONTENT_API_KEY']
+    end
   end
 end
