@@ -49,7 +49,7 @@ Rails.application.routes.draw do
   #   get '/nesha', to: 'pages#nesha'
   # end
 
-  get '/blog', to: 'blogs#index'
+  get '/blogs', to: 'blogs#index'
   get '/blog/:slug', to: 'blogs#show'
 
   get '/sitemap.xml.gz', to: 'sitemaps#show', format: :xml
