@@ -20,9 +20,19 @@
       </div>
     </div>
     <div class="max-w-7xl min-w-auto mx-auto flex justify-center pb-6">
-      <div class="relative">
-        <%= image_tag 'litetracker/hero-image.avif', width: "2880", height: "1606", class: "w-full h-full rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10 object-cover object-[left_center]" %>
-        <p class="absolute -bottom-10 w-full text-center text-base font-medium text-gray-500">Trusted by the ex Pivots and thousands of users</p>
+      <div class="relative w-full h-full">
+        <div id="hero-video-wrapper" class="w-full h-full rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10 overflow-hidden aspect-[2880/1606]">
+          <iframe 
+            id="hero-video"
+            class="w-full h-full object-cover object-[left_center]"
+            src="https://www.youtube.com/embed/-1SGdQVKJkY?rel=0&modestbranding=1&controls=0&mute=1&loop=1&playlist=-1SGdQVKJkY&enablejsapi=1&playsinline=1"
+            title="LiteTracker Video"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="hidden absolute -bottom-10 w-full text-center text-base font-medium text-gray-500">Trusted by the ex Pivots and thousands of users</p>
       </div>
     </div>
   </section>
