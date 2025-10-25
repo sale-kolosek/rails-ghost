@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 		if page_exists?(request.path)
 		  render "#{@app}/pages#{request.path}", layout: "#{@app}/layouts/application"
 		else
-			@page = ghost_client.get_page(request.path)
+			@page = ghost_client.get_data(:page, slug: request.path)
 
       render layout: "#{@app}/layouts/blog"
 		end

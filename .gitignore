@@ -8,8 +8,15 @@
 /.bundle
 /vendor/bundle
 
-# Ignore all environment files (except templates).
-/.env*
+# Ignore all environment files (except templates and env.development)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.heroku.production
+.env.production
+.env.heroku.staging
+.env.staging
 !/.env*.erb
 
 # Ignore all logfiles and tempfiles.
@@ -17,6 +24,9 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+
+# Ignore local development files
+.byebug_history
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*

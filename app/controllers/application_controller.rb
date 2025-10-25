@@ -3,17 +3,17 @@ class ApplicationController < ActionController::Base
   before_action :load_scripts
 
   def resolve_app
-    @app ||= request.host.gsub(".", "")
+    @app ||= (Site::Config.site.app_domain || request.host).gsub(".", "")
   end
 
   def ghost_client
-    @ghost_client ||= GhostClient.new
+    @ghost_client ||= Ghost::Client.new
   end
 
   def set_settings
     begin
       @settings = Rails.cache.fetch("ghost_settings_#{@app}", expires_in: 1.hour) do
-        ghost_client.settings
+        ghost_client.get_data(:settings)
       end
     rescue
       @settings = {}

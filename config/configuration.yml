@@ -1,0 +1,15 @@
+default: &default
+  site:
+    app_domain:  <%= ENV.fetch("APP_DOMAIN") { '' } %>
+    ghost_api_host: <%= ENV.fetch("GHOST_API_HOST") { '' } %>
+    ghost_api_content_key: <%= ENV.fetch("GHOST_CONTENT_API_KEY") { '' } %>
+
+
+test:
+  <<: *default
+
+development:
+  <<: *default
+
+production:
+  <<: *default

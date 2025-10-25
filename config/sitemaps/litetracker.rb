@@ -9,11 +9,11 @@ SitemapGenerator::Sitemap.create(filename: :sitemap_litetracker) do
   add '/nesha', changefreq: 'monthly', priority: 0.8
 
   # --- Ghost blog posts ---
-  ghost_client = GhostClient.new
+  ghost_client = Ghost::Client.new
   page = 1
 
   loop do
-    posts = ghost_client.get_posts(page)
+    posts = ghost_client.get_data(:posts, page: page)
     break if posts.blank?
 
     posts.each do |post|
@@ -29,7 +29,7 @@ SitemapGenerator::Sitemap.create(filename: :sitemap_litetracker) do
   # --- Ghost pages ---
   page = 1
   loop do
-    pages = ghost_client.get_pages(page)
+    pages = ghost_client.get_data(:pages, page: page)
     break if pages.blank?
 
     pages.each do |ghost_page|
