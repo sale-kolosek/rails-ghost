@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
 
   helper_method :app_name
 
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
+  rescue_from StandardError, with: :not_found unless Rails.env.development?
+
   def app_name
     @app ||= (Site::Config.site.app_domain || request.host).gsub(".", "")
   end
@@ -21,7 +24,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-	def route_not_found
+	def not_found
     render file: Rails.public_path.join('404.html'), status: :not_found
   end
 

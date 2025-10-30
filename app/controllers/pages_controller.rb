@@ -14,6 +14,8 @@ class PagesController < ApplicationController
 		  render "#{app_name}/pages#{request.path}"
 		else
 			@page = ghost_client.get_data(:page, slug: request.path)
+
+			raise ActiveRecord::RecordNotFound, "Page not found" unless @page.present?
 		end
 	end
 

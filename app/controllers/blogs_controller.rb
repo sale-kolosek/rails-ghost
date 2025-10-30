@@ -13,8 +13,12 @@ class BlogsController < ApplicationController
 	def show
 		@post = ghost_client.get_data(:post, path: request.path)
 
-		if blog_override_exists?(:show)
-			render "#{app_name}/blogs/show"
+		if @post.present?
+			if blog_override_exists?(:show)
+				render "#{app_name}/blogs/show"
+			end
+		else
+			raise ActiveRecord::RecordNotFound, "Post not found"
 		end
 	end
 
