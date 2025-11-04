@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title><%= @post.present? ? (@post['meta_title'].present? ? @post['meta_title'] : @post['title']) : 'Ruby.ci fastest Ruby on Rails CI in cloud' %></title>
-    <meta name="description" content="<%= @post.present? ? @post['meta_description'] : 'Blog page' %>">
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : 'Blog page' %>">
     <meta name="keywords" content="ruby, continuous integration, automated tests">
     <meta name="canonical"  content="<%= @post['canonical_url'] %>">
 

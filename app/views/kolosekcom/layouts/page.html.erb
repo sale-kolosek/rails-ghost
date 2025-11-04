@@ -6,7 +6,7 @@
      <title>
       <%= content_for?(:title) ? yield(:title) : 'Kolosek | Ruby on Rails development company' %>
     </title>
-    <meta name="description" content="<%= @page.present? ? @page['meta_description'] : '' %>">
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : '' %>">
     <meta name="keywords" content="ruby, continuous integration, automated tests">
 
     <%= favicon_link_tag 'kolosek/favicon.svg' %>

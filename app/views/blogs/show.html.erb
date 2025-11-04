@@ -1,3 +1,5 @@
+<% content_for :description, "#{@post['meta_description'] || truncate(strip_tags(@post['html']), length: 160, separator: ' ') }" %>
+
 <div class="outer xl:outer-xl post tag-hash-blog-grid <%= @post['feature_image'].present? ? '' : 'no-image' %>">
   <article class="inner">
     <div data-hero="" class="text-lg max-w-none py-16 sm:py-20 md:py-28 mx-auto sm:text-center">
@@ -5,9 +7,9 @@
       <%= @post['primary_tag'].present? ? @post['primary_tag']['name'] : '' %>
     </a>
 
-    <h1 class="my-0 mx-auto max-w-4xl text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
+    <div class="my-0 mx-auto max-w-4xl text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
       <%= @post['title'] %>
-    </h1>    
+    </div>    
 
     <p class="mt-6 text-base text-gray-400 dark:text-gray-500">
       <time class="capitalize" datetime="2024-02-20"><%= @post['created_at'].to_datetime.strftime("%B %d, %Y") %></time>
@@ -41,7 +43,7 @@
           </h2>  
                               
           <div class="content lg:content-lg mb-16 sm:mb-20 md:mb-28  has-full has-wide ">
-            <%= raw @post['html'] %>
+            <%= raw fix_missing_img_alts(@post['html'], "#{@app} image") %>
           </div>
         </div>
       </div>
