@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :load_scripts
+  before_action :store_utm_in_session
 
   helper_method :app_name
 
@@ -43,5 +44,11 @@ class ApplicationController < ActionController::Base
   def load_scripts
     @header_script = Script.find_by(key: 'header')&.value
     @footer_script = Script.find_by(key: 'footer')&.value
+  end
+
+  def store_utm_in_session
+    %i[utm_source utm_medium utm_term utm_content utm_campaign].each do |key|
+      session[key] = params[key] if params[key].present?
+    end
   end
 end
