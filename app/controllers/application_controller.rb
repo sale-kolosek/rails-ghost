@@ -57,7 +57,7 @@ class ApplicationController < ActionController::Base
   end
 
   def store_utm_in_session
-    %i[utm_source utm_medium utm_term utm_content utm_campaign].each do |key|
+    %i[utm_source utm_medium utm_term utm_content utm_campaign ref].each do |key|
       session[key] = params[key] if params[key].present?
     end
   end
