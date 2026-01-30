@@ -4,14 +4,29 @@ module Ghost
     attr_accessor :host_url, :api_key
 
     class InvalidPath < StandardError; end
-    
 
-    def initialize
-      @host_url = Site::Config.site.ghost_api_host + '/ghost/api'
+
+    def initialize(host = nil)
+      @host_url = build_host_url(host)
       @api_key = Site::Config.site.ghost_api_content_key
     end
 
+    private
+
+    def build_host_url(host)
+      configured_host = Site::Config.site.ghost_api_host.presence
+      return "#{configured_host}/ghost/api" if configured_host
+
+      return "https://blog.#{host}/ghost/api" if host.present?
+
+      nil
+    end
+
+    public
+
     def path(method, params)
+      return nil unless host_url.present?
+
       send(method, params)
     rescue => e
       raise InvalidPath.new(e.message)

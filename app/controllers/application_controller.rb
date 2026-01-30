@@ -9,11 +9,11 @@ class ApplicationController < ActionController::Base
   rescue_from StandardError, with: :not_found unless Rails.env.development?
 
   def app_name
-    @app ||= (Site::Config.site.app_domain || request.host).gsub(".", "")
+    @app ||= (Site::Config.site.app_domain.presence || request.host).gsub(".", "")
   end
 
   def ghost_client
-    @ghost_client ||= Ghost::Client.new
+    @ghost_client ||= Ghost::Client.new(request.host)
   end
 
   def set_settings
