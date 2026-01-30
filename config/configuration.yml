@@ -3,6 +3,13 @@ default: &default
     app_domain:  <%= ENV.fetch("APP_DOMAIN") { '' } %>
     ghost_api_host: <%= ENV.fetch("GHOST_API_HOST") { '' } %>
     ghost_api_content_key: <%= ENV.fetch("GHOST_CONTENT_API_KEY") { '' } %>
+  domains:
+    # Add domain-specific Ghost API keys here
+    # Format: domain_without_dots: api_key
+    # Example:
+    # examplecom: your_api_key_here
+    litetrackercom: <%= ENV.fetch("GHOST_CONTENT_API_KEY_LITETRACKER") { '' } %>
+    kolosekcom: <%= ENV.fetch("GHOST_CONTENT_API_KEY_KOLOSEK") { '' } %>
 
 
 test:

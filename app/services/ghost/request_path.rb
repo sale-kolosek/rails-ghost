@@ -7,8 +7,9 @@ module Ghost
 
 
     def initialize(host = nil)
+      @host = host
       @host_url = build_host_url(host)
-      @api_key = Site::Config.site.ghost_api_content_key
+      @api_key = build_api_key(host)
     end
 
     private
@@ -22,10 +23,20 @@ module Ghost
       nil
     end
 
+    def build_api_key(host)
+      return Site::Config.site.ghost_api_content_key.presence if Site::Config.site.ghost_api_content_key.present?
+
+      return nil unless host.present?
+
+      domain_key = host.gsub(".", "")
+      domain_config = Site::Config.domains&.send(domain_key)
+      domain_config.presence
+    end
+
     public
 
     def path(method, params)
-      return nil unless host_url.present?
+      return nil unless host_url.present? && api_key.present?
 
       send(method, params)
     rescue => e
