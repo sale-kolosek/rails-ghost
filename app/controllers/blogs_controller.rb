@@ -3,8 +3,8 @@ class BlogsController < ApplicationController
 	before_action :set_settings
 
 	def index
-		@posts = ghost_client.get_data(:posts, page: params[:page] || 1)
-		@featured = @posts.select {|p| p['featured']}.first(3)
+		@posts = ghost_client.get_data(:posts, page: params[:page] || 1) || []
+		@featured = @posts.select { |p| p['featured'] }.first(3)
 		@hide_banner = true
 
 		if blog_override_exists?(:index)

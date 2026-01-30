@@ -413,7 +413,9 @@
         </div>
       </div><!-- /.row -->
       <div class="row">
-        <%= render 'kolosekcom/pages/partials/post_card', post: @fatured %>
+        <% @featured.each do |post| %>
+          <%= render 'kolosekcom/pages/partials/post_card', post: post %>
+        <% end %>
         <% @posts.first(5).each do |post| %>
           <%= render 'kolosekcom/pages/partials/post_card', post: post %>
         <% end %>
