@@ -4,7 +4,8 @@ class PagesController < ApplicationController
 	before_action :set_settings
 
 	def index
-		@posts = ghost_client.get_data(:posts, page: params[:page] || 1)
+		@posts = ghost_client.get_data(:posts, page: params[:page] || 1) || []
+		@featured = @posts.select { |p| p['featured'] }.first(3)
 		@hide_banner = true
 
 		render "#{app_name}/pages/index", layout: "#{app_name}/layouts/application"
