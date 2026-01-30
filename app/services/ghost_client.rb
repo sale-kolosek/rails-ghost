@@ -89,7 +89,7 @@ class GhostClient
     return nil unless host.present?
 
     domain_key = host.gsub(".", "")
-    Site::Config.domains&.send(domain_key)
+    Site::Config.domains&.[](domain_key) || Site::Config.domains&.send(domain_key)
   end
 
   def host_url
