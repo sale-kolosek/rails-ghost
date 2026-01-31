@@ -5,6 +5,7 @@ class BlockMaliciousRequests
     .php .asp .aspx .jsp .cgi .pl .py .sh .bash
     .exe .dll .bat .cmd .com .msi
     .env .git .svn .htaccess .htpasswd
+    .rss .rdf
   ].freeze
 
   BLOCKED_PATHS = %w[
@@ -21,6 +22,7 @@ class BlockMaliciousRequests
     /solr /jenkins /hudson
     /telescope /nova
     /elmah.axd /trace.axd
+    /rss /feed /atom /rss.xml /feed.xml /atom.xml
   ].freeze
 
   def initialize(app)
