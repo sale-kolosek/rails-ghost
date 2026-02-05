@@ -8,7 +8,7 @@
     <!-- Blur background effect (Astera-style) -->
     <div class="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-br from-blue-400/20 via-purple-300/20 to-pink-300/20 rounded-full blur-[100px] opacity-60 will-change-transform pointer-events-none"></div>
 
-    <div class="z-10 mx-auto max-w-[1440px] flex flex-col items-center gap-10 md:gap-30 py-16 md:pb-0">
+    <div class="z-10 mx-auto max-w-7xl flex flex-col items-center gap-10 md:gap-30 py-16 md:pb-0">
       <!-- Badge -->
       <div class="hidden sm:flex sm:justify-center">
         <div class="animate-background rounded-full bg-gradient-to-r from-green-300 via-blue-600 to-red-300 bg-[length:_400%_400%] px-px py-1 [animation-duration:_6s]">
@@ -32,27 +32,50 @@
             <a href="<%= app_login_url_with_utm('https://app.litetracker.com/register') %>" class="rounded-xl bg-black px-5 py-3 text-base font-semibold text-white shadow-xs hover:bg-black/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black/80" data-umami-event="signup-click" data-umami-event-location="hero"><%= safe_phrase('litetracker_btn-get_started', 'Get started') %> &rightarrow;</a>
             <a href="<%= app_login_url_with_utm('https://cal.com/neshaz/litetracker') %>" class="rounded-xl border border-gray-200 px-5 py-3 shadow-xs text-base font-semibold text-gray-900 hover:bg-gray-100" data-umami-event="cta-demo" data-umami-event-location="hero"><%= safe_phrase('litetracker_btn-human_talk', 'Talk to human') %> <span aria-hidden="true">→</span></a>
           </div>
+
+          <!-- Social proof -->
+          <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-8">
+            <div class="flex -space-x-2">
+              <img src="https://i.pravatar.cc/32?img=<%= rand(1..70) %>" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+              <img src="https://i.pravatar.cc/32?img=<%= rand(1..70) %>" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+              <img src="https://i.pravatar.cc/32?img=<%= rand(1..70) %>" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+              <img src="https://i.pravatar.cc/32?img=<%= rand(1..70) %>" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+              <img src="https://i.pravatar.cc/32?img=<%= rand(1..70) %>" alt="" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+              <div class="flex items-center">
+                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+              <span class="text-sm text-gray-600">Loved by Pivotal Tracker teams</span>
+            </div>
+          </div>
         </div>
 
         <!-- Video section -->
-        <div id="hero-video-wrapper" class="group relative w-full h-full md:absolute md:left-1/2 md:w-1/2 md:h-min rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10 overflow-hidden aspect-[2880/1606] cursor-pointer">
-          <%= image_tag 'litetracker/default.png', class: "w-full h-full object-cover object-[left_center] opacity-100 transition-opacity duration-1000 group-hover:opacity-0", alt: 'LiteTracker app' %>
-          <iframe
-            id="hero-video"
-            class="absolute inset-0 w-full h-full object-cover object-[left_center] opacity-0 transition-opacity duration-1000 group-hover:opacity-100"
-            src="https://www.youtube.com/embed/-1SGdQVKJkY?si=zf_p2taEJrLZYmqu?autoplay=0&mute=1&loop=1&controls=1&disablekb=1&fs=0&modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1&playsinline=1&showinfo=0"
-            title="LiteTracker Video"
-            frameborder="0"
-            allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+        <div id="hero-video-wrapper" class="w-full h-full md:absolute md:left-1/2 md:w-1/2 md:h-min rounded-2xl bg-white p-2 border border-gray-200 shadow-2xl">
+          <div class="group relative w-full rounded-xl overflow-hidden aspect-[2880/1606] cursor-pointer">
+            <%= image_tag 'litetracker/default.png', class: "w-full h-full object-cover object-[left_center] opacity-100 transition-opacity duration-1000 group-hover:opacity-0", alt: 'LiteTracker app' %>
+            <iframe
+              id="hero-video"
+              class="absolute inset-0 w-full h-full object-cover object-[left_center] opacity-0 transition-opacity duration-1000 group-hover:opacity-100"
+              src="https://www.youtube.com/embed/-1SGdQVKJkY?si=zf_p2taEJrLZYmqu?autoplay=0&mute=1&loop=1&controls=1&disablekb=1&fs=0&modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1&playsinline=1&showinfo=0"
+              title="LiteTracker Video"
+              frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="features-section" class="relative px-6 pt-14 lg:px-8">
-    <div class="relative mx-auto max-w-7xl py-16 sm:pt-24 flex items-center flex-col justify-start gap-y-24 w-full">
+  <section id="features-section" class="relative px-6 lg:px-8">
+    <div class="relative mx-auto max-w-7xl py-8 sm:pt-12 flex items-center flex-col justify-start gap-y-24 w-full">
       <div class="mx-auto max-w-3xl flex flex-col gap-y-6 justify-center w-full text-center">
         <div class="flex items-center justify-center text-blue-dark text-xs">
           <svg class="h-4 w-4"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
