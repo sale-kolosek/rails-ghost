@@ -625,8 +625,144 @@
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <%= render "litetrackercom/sections/faq" %>
+  <!-- FAQ Section - Migration Focused -->
+  <section id="faq-section" class="pb-16 lg:pb-28">
+    <div class="relative mx-auto max-w-7xl py-16 sm:pt-24 flex flex-col items-center gap-y-24">
+      <div class="mx-auto max-w-2xl flex flex-col gap-y-6 text-center">
+        <div class="flex items-center justify-center text-green-dark text-xs">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <p class="pl-1 font-bold">Migration FAQ</p>
+        </div>
+        <h3 class="text-heading">Common Questions About Migrating</h3>
+        <p class="text-base font-normal text-gray-500 sm:text-lg">
+          Everything you need to know about moving from Pivotal Tracker to LiteTracker.
+        </p>
+        <div class="mx-auto h-11 w-fit mt-8">
+          <a href="https://eu.bigin.online/org20102608918/forms/litetracker" class="flex items-center opacity-100 justify-center rounded-xl h-full pr-4 pl-5 font-semibold text-black bg-white hover:bg-gray-100 border border-black shadow-[rgba(0,0,0,0.25)_0px_1px_4px_0px]" data-umami-event="cta-support" data-umami-event-location="pt-alternative-faq">
+            <span>Contact support</span>
+            <svg class="h-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z"/>
+              <polyline points="9 6 15 12 9 18" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="flex-grow px-7 md:px-10 xl:px-2 py-4">
+        <div class="mx-auto max-w-2xl sm:min-w-2xl">
+          <div class="border-b border-gray-200">
+            <input type="checkbox" name="migration-answer-1" id="migration-answer-1" class="peer sr-only">
+            <label for="migration-answer-1" class="cursor-pointer flex w-full items-center gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-black focus:outline-none p-6 peer-checked:[&_.open-icon]:hidden peer-checked:[&_.close-icon]:block">
+              <span>How do I migrate from Pivotal Tracker?</span>
+              <svg class="h-5 w-5 open-icon block" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              <svg class="h-5 w-5 close-icon hidden" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </label>
+            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-black font-light hidden peer-checked:block">
+              Simply sign up for LiteTracker and use our built-in import tool. You can import directly using your Pivotal Tracker API token, or upload a CSV export. The process is automated and typically completes in just a few minutes.
+            </div>
+          </div>
+          <div class="border-b border-gray-200">
+            <input type="checkbox" name="migration-answer-2" id="migration-answer-2" class="peer sr-only">
+            <label for="migration-answer-2" class="group cursor-pointer flex w-full items-center gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-black focus:outline-none p-6 peer-checked:[&_.open-icon]:hidden peer-checked:[&_.close-icon]:block">
+              <span>What data gets migrated from Pivotal Tracker?</span>
+              <svg class="h-5 w-5 open-icon block" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              <svg class="h-5 w-5 close-icon hidden" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </label>
+            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-black font-light hidden peer-checked:block">
+              We migrate everything: all your projects, stories (features, bugs, chores, releases), epics, labels, comments, activity history, attachments, and team member assignments. Your velocity history and iteration data are preserved too.
+            </div>
+          </div>
+          <div class="border-b border-gray-200">
+            <input type="checkbox" name="migration-answer-3" id="migration-answer-3" class="peer sr-only">
+            <label for="migration-answer-3" class="group cursor-pointer flex w-full items-center gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-black focus:outline-none p-6 peer-checked:[&_.open-icon]:hidden peer-checked:[&_.close-icon]:block">
+              <span>Will my team need to re-learn everything?</span>
+              <svg class="h-5 w-5 open-icon block" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              <svg class="h-5 w-5 close-icon hidden" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </label>
+            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-black font-light hidden peer-checked:block">
+              No. LiteTracker was built specifically for Pivotal Tracker users. The workflow is nearly identical: Start → Finish → Deliver → Accept/Reject. Story points, velocity, iterations, icebox, and backlog all work the same way. Your team will feel right at home.
+            </div>
+          </div>
+          <div class="border-b border-gray-200">
+            <input type="checkbox" name="migration-answer-4" id="migration-answer-4" class="peer sr-only">
+            <label for="migration-answer-4" class="group cursor-pointer flex w-full items-center gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-black focus:outline-none p-6 peer-checked:[&_.open-icon]:hidden peer-checked:[&_.close-icon]:block">
+              <span>What about my GitHub/GitLab integrations?</span>
+              <svg class="h-5 w-5 open-icon block" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              <svg class="h-5 w-5 close-icon hidden" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </label>
+            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-black font-light hidden peer-checked:block">
+              LiteTracker supports GitHub, GitLab, and Gitea integrations. You can link commits and pull requests to stories using the same story ID syntax you're used to. We also support Slack notifications, webhooks, and Zapier for custom workflows.
+            </div>
+          </div>
+          <div class="border-b border-gray-200">
+            <input type="checkbox" name="migration-answer-5" id="migration-answer-5" class="peer sr-only">
+            <label for="migration-answer-5" class="group cursor-pointer flex w-full items-center gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-black focus:outline-none p-6 peer-checked:[&_.open-icon]:hidden peer-checked:[&_.close-icon]:block">
+              <span>Is there a cost for migration?</span>
+              <svg class="h-5 w-5 open-icon block" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              <svg class="h-5 w-5 close-icon hidden" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </label>
+            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-black font-light hidden peer-checked:block">
+              Migration is completely free. You can import all your Pivotal Tracker data at no cost. We also offer a free tier with up to 200 stories, so you can try LiteTracker before committing to a paid plan. Need help? Our team offers free onboarding assistance.
+            </div>
+          </div>
+          <div class="border-b border-gray-200">
+            <input type="checkbox" name="migration-answer-6" id="migration-answer-6" class="peer sr-only">
+            <label for="migration-answer-6" class="group cursor-pointer flex w-full items-center gap-x-5 justify-between rounded-lg text-left text-xl font-normal text-black focus:outline-none p-6 peer-checked:[&_.open-icon]:hidden peer-checked:[&_.close-icon]:block">
+              <span>Can I try LiteTracker before fully committing?</span>
+              <svg class="h-5 w-5 open-icon block" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              <svg class="h-5 w-5 close-icon hidden" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"/>
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </label>
+            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-black font-light hidden peer-checked:block">
+              Yes, absolutely. You can import a single project first to test the waters. Our free tier lets you explore all features with up to 200 stories. Once you're satisfied, you can import the rest of your projects and upgrade to a paid plan when ready.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CTA Section -->
   <section id="cta" class="relative px-6 lg:px-8">
