@@ -4,11 +4,11 @@
   <%= render 'litetrackercom/scripts/yt_script' %>
 <% end %>
 <main>
-  <section id="hero-section" class="relative px-6 pt-14 lg:px-8 overflow-hidden">
+  <section id="hero-section" class="relative px-6 lg:px-8 md:h-[calc(100vh-200px)] overflow-hidden">
     <!-- Blur background effect (Astera-style) -->
     <div class="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-br from-blue-400/20 via-purple-300/20 to-pink-300/20 rounded-full blur-[100px] opacity-60 will-change-transform pointer-events-none"></div>
 
-    <div class="relative z-10 mx-auto max-w-[1440px] flex flex-col items-center gap-[42px] py-16 sm:pt-24">
+    <div class="z-10 mx-auto max-w-[1440px] flex flex-col items-center gap-10 md:gap-30 py-16 md:pb-0">
       <!-- Badge -->
       <div class="hidden sm:flex sm:justify-center">
         <div class="animate-background rounded-full bg-gradient-to-r from-green-300 via-blue-600 to-red-300 bg-[length:_400%_400%] px-px py-1 [animation-duration:_6s]">
@@ -19,34 +19,33 @@
         </div>
       </div>
 
-      <!-- Hero content -->
-      <div class="flex flex-col items-center gap-6 text-center max-w-4xl">
-        <h1 class="text-5xl font-medium tracking-tight text-balance text-gray-900 sm:text-7xl animate-blur-to-focus">
-          <%= safe_phrase('litetracker_hero-header', 'The most complete Pivotal Tracker successor*') %></h1>
-        <p class="mx-auto max-w-2xl text-subheading"><%= safe_phrase('litetracker_hero-subheader', 'Packed with features we all love. Easy 1 minute transfer and complementary onboarding when you book a call.') %></p>
-      </div>
-
-      <!-- CTA buttons -->
-      <div class="flex items-center justify-center gap-x-6">
-        <a href="<%= app_login_url_with_utm('https://app.litetracker.com/register') %>" class="rounded-xl bg-black px-5 py-3 text-base font-semibold text-white shadow-xs hover:bg-black/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black/80" data-umami-event="signup-click" data-umami-event-location="hero"><%= safe_phrase('litetracker_btn-get_started', 'Get started') %> &rightarrow;</a>
-        <a href="<%= app_login_url_with_utm('https://cal.com/neshaz/litetracker') %>" class="rounded-xl border border-gray-200 px-5 py-3 shadow-xs text-base font-semibold text-gray-900 hover:bg-gray-100" data-umami-event="cta-demo" data-umami-event-location="hero"><%= safe_phrase('litetracker_btn-human_talk', 'Talk to human') %> <span aria-hidden="true">→</span></a>
-      </div>
-
-      <!-- Video section -->
-      <div class="w-full max-w-7xl">
-        <div class="relative w-full h-full">
-          <div id="hero-video-wrapper" class="w-full h-full rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10 overflow-hidden aspect-[2880/1606] cursor-pointer">
-            <iframe
-              id="hero-video"
-              class="w-full h-full object-cover object-[left_center]"
-              src="https://www.youtube.com/embed/-1SGdQVKJkY?si=zf_p2taEJrLZYmqu?autoplay=0&mute=1&loop=1&controls=1&disablekb=1&fs=0&modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1&playsinline=1&showinfo=0"
-              title="LiteTracker Video"
-              frameborder="0"
-              allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
+      <div class="w-full grid grid-cols-1 md:grid-cols-2 justify-center gap-10">
+        <div class="">
+          <!-- Hero content -->
+          <div class="flex flex-col items-center md:items-start gap-6 max-w-4xl text-center md:text-left">
+            <h1 class="text-5xl md:leading-15 font-medium tracking-tight text-balance text-gray-900 animate-blur-to-focus">
+              <%= safe_phrase('litetracker_hero-header', 'The most complete Pivotal Tracker successor*') %></h1>
+            <p class="mx-auto md:mx-0 max-w-2xl text-subheading"><%= safe_phrase('litetracker_hero-subheader', 'Packed with features we all love. Easy 1 minute transfer and complementary onboarding when you book a call.') %></p>
           </div>
-          <p class="hidden absolute -bottom-10 w-full text-center text-base font-medium text-gray-500">Trusted by the ex Pivots and thousands of users</p>
+          <!-- CTA buttons -->
+          <div class="flex items-center justify-center md:justify-start gap-x-6 pt-10 md:pt-24">
+            <a href="<%= app_login_url_with_utm('https://app.litetracker.com/register') %>" class="rounded-xl bg-black px-5 py-3 text-base font-semibold text-white shadow-xs hover:bg-black/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black/80" data-umami-event="signup-click" data-umami-event-location="hero"><%= safe_phrase('litetracker_btn-get_started', 'Get started') %> &rightarrow;</a>
+            <a href="<%= app_login_url_with_utm('https://cal.com/neshaz/litetracker') %>" class="rounded-xl border border-gray-200 px-5 py-3 shadow-xs text-base font-semibold text-gray-900 hover:bg-gray-100" data-umami-event="cta-demo" data-umami-event-location="hero"><%= safe_phrase('litetracker_btn-human_talk', 'Talk to human') %> <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <!-- Video section -->
+        <div id="hero-video-wrapper" class="group relative w-full h-full md:absolute md:left-1/2 md:w-1/2 md:h-min rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10 overflow-hidden aspect-[2880/1606] cursor-pointer">
+          <%= image_tag 'litetracker/default.png', class: "w-full h-full object-cover object-[left_center] opacity-100 transition-opacity duration-1000 group-hover:opacity-0", alt: 'LiteTracker app' %>
+          <iframe
+            id="hero-video"
+            class="absolute inset-0 w-full h-full object-cover object-[left_center] opacity-0 transition-opacity duration-1000 group-hover:opacity-100"
+            src="https://www.youtube.com/embed/-1SGdQVKJkY?si=zf_p2taEJrLZYmqu?autoplay=0&mute=1&loop=1&controls=1&disablekb=1&fs=0&modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1&playsinline=1&showinfo=0"
+            title="LiteTracker Video"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
     </div>
