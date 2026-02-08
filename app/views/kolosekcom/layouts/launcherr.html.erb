@@ -66,8 +66,17 @@
     .lr-hero h1 span { color: var(--text-muted); }
     .lr-hero p { font-size: 18px; color: var(--text-secondary); max-width: 520px; margin: 0 auto 40px; line-height: 1.6; }
     .lr-hero-buttons { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 64px; }
-    .lr-hero-mockup { max-width: 1100px; margin: 0 auto; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 24px 48px rgba(0,0,0,0.08); }
-    .lr-hero-mockup img { width: 100%; }
+    .lr-hero-collage { position: relative; max-width: 900px; height: 420px; margin: 0 auto; }
+    .lr-collage-item { position: absolute; border-radius: 12px; overflow: hidden; border: 2px solid var(--white); box-shadow: 0 8px 30px rgba(0,0,0,0.12); transition: transform 0.3s, box-shadow 0.3s; }
+    .lr-collage-item:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 12px 40px rgba(0,0,0,0.18); z-index: 10; }
+    .lr-collage-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .lr-collage-1 { width: 340px; height: 220px; top: 40px; left: 50%; transform: translateX(-50%); z-index: 5; }
+    .lr-collage-2 { width: 280px; height: 180px; top: 0; left: 2%; z-index: 4; }
+    .lr-collage-3 { width: 260px; height: 170px; top: 10px; right: 2%; z-index: 4; }
+    .lr-collage-4 { width: 240px; height: 160px; bottom: 20px; left: 8%; z-index: 3; }
+    .lr-collage-5 { width: 250px; height: 160px; bottom: 10px; right: 6%; z-index: 3; }
+    .lr-collage-6 { width: 200px; height: 140px; bottom: 60px; left: 30%; z-index: 2; }
+    .lr-collage-7 { width: 200px; height: 140px; bottom: 50px; right: 28%; z-index: 2; }
 
     /* ========== TRUSTED BY ========== */
     .lr-trusted { padding: 60px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); text-align: center; }
@@ -219,6 +228,14 @@
       .lr-hero h1 { font-size: 48px; }
       .lr-section-heading { font-size: 32px; }
       .lr-cta h2 { font-size: 32px; }
+      .lr-hero-collage { height: 340px; max-width: 700px; }
+      .lr-collage-1 { width: 280px; height: 180px; }
+      .lr-collage-2 { width: 220px; height: 150px; }
+      .lr-collage-3 { width: 210px; height: 140px; }
+      .lr-collage-4 { width: 200px; height: 130px; }
+      .lr-collage-5 { width: 200px; height: 130px; }
+      .lr-collage-6 { width: 170px; height: 120px; }
+      .lr-collage-7 { width: 170px; height: 120px; }
       .lr-pricing-cards { grid-template-columns: repeat(2, 1fr); }
       .lr-bento-card { padding: 24px; }
       .lr-footer-links { gap: 48px; }
@@ -230,6 +247,14 @@
       .lr-menu-btn { display: flex; }
       .lr-hero { padding: 60px 0 48px; }
       .lr-hero h1 { font-size: 32px; letter-spacing: -0.02em; }
+      .lr-hero-collage { height: 280px; max-width: 100%; }
+      .lr-collage-1 { width: 200px; height: 140px; top: 30px; }
+      .lr-collage-2 { width: 160px; height: 110px; }
+      .lr-collage-3 { width: 150px; height: 105px; }
+      .lr-collage-4 { width: 150px; height: 100px; }
+      .lr-collage-5 { width: 150px; height: 100px; }
+      .lr-collage-6 { width: 130px; height: 95px; left: 22%; }
+      .lr-collage-7 { width: 130px; height: 95px; right: 20%; }
       .lr-hero p { font-size: 16px; }
       .lr-hero-buttons { flex-direction: column; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; }
       .lr-hero-buttons .lr-btn { width: 100%; justify-content: center; }
