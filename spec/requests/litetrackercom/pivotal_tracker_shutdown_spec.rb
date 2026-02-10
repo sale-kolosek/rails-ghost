@@ -46,5 +46,20 @@ RSpec.describe "Litetrackercom::PivotalTrackerShutdown", type: :request do
       expect(response.body).to include("Shutdown FAQ")
       expect(response.body).to include("When did Pivotal Tracker shut down?")
     end
+
+    it "uses pivotal-tracker-logo image_tag without opacity on parent" do
+      get "/pivotal-tracker-shutdown"
+
+      expect(response.body).to match(/pivotal-tracker-logo[^"]*\.svg/)
+      expect(response.body).not_to include('fill="#4A9187"')
+      expect(response.body).not_to include('opacity-50')
+    end
+
+    it "uses small-logo-black.png image_tag for the LiteTracker icon" do
+      get "/pivotal-tracker-shutdown"
+
+      expect(response.body).to match(/small-logo-black[^"]*\.png/)
+      expect(response.body).not_to include('bg-[#1a1a1a]')
+    end
   end
 end

@@ -49,5 +49,13 @@ RSpec.describe "Litetrackercom::ImportFromPivotal", type: :request do
       expect(response.body).to include("Import FAQ")
       expect(response.body).to include("Where do I find my Pivotal Tracker API token?")
     end
+
+    it "uses pivotal-tracker-logo image_tag for the Pivotal Tracker icon" do
+      get "/import-from-pivotal"
+
+      expect(response.body).to match(/pivotal-tracker-logo[^"]*\.svg/)
+      expect(response.body).not_to include('fill="#ed7d1a"')
+      expect(response.body).not_to include('fill="#5282b0"')
+    end
   end
 end
