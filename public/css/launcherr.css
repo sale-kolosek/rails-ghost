@@ -32,6 +32,7 @@ input { font-family: inherit; }
 .lr-nav { display: flex; align-items: center; gap: 32px; }
 .lr-nav a { font-size: 14px; color: var(--text-secondary); font-weight: 500; transition: color 0.2s; }
 .lr-nav a:hover { color: var(--text-primary); }
+.lr-nav .lr-mobile-nav-cta { display: none; }
 .lr-header-right { display: flex; align-items: center; gap: 16px; }
 .lr-badge-hiring { display: inline-flex; align-items: center; gap: 6px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 500; color: #16a34a; }
 .lr-badge-hiring::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-green); }
@@ -405,6 +406,7 @@ input { font-family: inherit; }
   .lr-nav a:last-child { border-bottom: none; }
   .lr-menu-open .lr-nav { display: flex; }
   .lr-menu-open .lr-menu-btn { background: var(--bg-light); }
+  .lr-mobile-nav-cta { display: flex; justify-content: center; margin-top: 8px; padding: 14px 32px !important; border-bottom: none !important; color: var(--white) !important; }
 }
 
 /* ========== RESPONSIVE ========== */
@@ -428,6 +430,7 @@ input { font-family: inherit; }
 
 @media (max-width: 768px) {
   .lr-badge-hiring { display: none; }
+  .lr-header-right .lr-btn-primary { display: none; }
   .lr-menu-btn { display: flex; }
   .lr-hero { padding: 120px 0 100px; }
   .lr-hero-tag { gap: 2px; }
