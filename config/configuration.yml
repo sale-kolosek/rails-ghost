@@ -18,6 +18,9 @@ default: &default
     fastci:
       host: https://blog.fast.ci
       key: <%= ENV.fetch("GHOST_CONTENT_API_KEY_FASTCI") { '' } %>
+    kolosekaicom:
+      host: <%= ENV.fetch("GHOST_API_HOST_KOLOSEKAI") { '' } %>
+      key: <%= ENV.fetch("GHOST_CONTENT_API_KEY_KOLOSEKAI") { '' } %>
 
 
 test:
