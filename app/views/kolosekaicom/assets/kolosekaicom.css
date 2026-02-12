@@ -267,7 +267,7 @@ input { font-family: inherit; }
 .lr-toggle-switch::after { content: ''; width: 18px; height: 18px; background: var(--white); border-radius: 50%; position: absolute; top: 3px; left: 3px; transition: transform 0.2s; }
 .lr-discount-badge { background: var(--accent-blue-light); color: var(--accent-blue); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; }
 .lr-pricing-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.lr-pricing-card { background: var(--white); border: 1px solid var(--border-color); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; }
+.lr-pricing-card { background: var(--white); border: 1px solid var(--border-color); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; position: relative; }
 .lr-pricing-card-featured { background: var(--text-primary); color: var(--white); }
 .lr-pricing-card-featured .lr-pricing-desc { color: rgba(255,255,255,0.6); }
 .lr-pricing-card-featured .lr-pricing-feature { color: rgba(255,255,255,0.8); }
@@ -276,7 +276,7 @@ input { font-family: inherit; }
 .lr-pricing-card-featured .lr-pricing-divider { border-color: rgba(255,255,255,0.15); }
 .lr-pricing-name { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
 .lr-pricing-name h3 { font-size: 18px; font-weight: 500; letter-spacing: -0.01em; line-height: 1.2em; }
-.lr-pricing-name .lr-popular-badge { font-size: 11px; font-weight: 600; background: var(--accent-blue); color: var(--white); padding: 3px 10px; border-radius: 999px; }
+.lr-popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); font-size: 11px; font-weight: 600; background: var(--accent-blue); color: var(--white); padding: 4px 12px; border-radius: 999px; white-space: nowrap; }
 .lr-pricing-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 20px; }
 .lr-pricing-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
 .lr-pricing-price .dollar { font-size: 18px; font-weight: 600; }
