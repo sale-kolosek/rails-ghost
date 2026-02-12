@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Kolosekaicom::Pages", type: :request do
   before do
-    host! "kolosekai.com"
+    host! "kolosek.com"
   end
 
   describe "GET / (home)" do
@@ -56,7 +56,7 @@ RSpec.describe "Kolosekaicom::Pages", type: :request do
       get "/"
 
       expect(response.body).to include("Kolosek AI - Native AI Agency")
-      expect(response.body).to include("kolosekaicom.css")
+      expect(response.body).to include("kolosekcom.css")
     end
   end
 
