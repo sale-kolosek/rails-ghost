@@ -1,3 +1,9 @@
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "kolosek", {origin:"https://cal.com"});
+  Cal.ns.kolosek("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+</script>
+
 <!-- ========== HERO ========== -->
 <section class="lr-hero lr-hero-index lr-fade-in">
   <div class="lr-hero-bg-nodes">
@@ -11,10 +17,10 @@
       For founders who ship smart
     </div>
     <h1>Founders Get 3x ROI <span>When They Hire Us.</span></h1>
-    <p>Your startup deserves an engineering partner that turns every dollar into measurable growth. Our AI-native sprints ship the right features, faster &mdash; so you scale without burning runway.</p>
+    <p>AI-native sprints that ship the right features, faster &mdash; so you scale without burning runway.</p>
     <div class="lr-hero-buttons">
-      <a href="https://cal.com/neshaz/intro" target="_blank" class="lr-btn lr-btn-primary lr-btn-lg" data-umami-event="cta-schedule-call" data-umami-event-location="startups-hero">
-        Schedule a call
+      <a href="#" class="lr-btn lr-btn-primary lr-btn-lg" data-cal-link="neshaz/intro" data-cal-namespace="kolosek" data-cal-config='{"layout":"month_view"}' data-umami-event="cta-talk-to-us" data-umami-event-location="startups-hero">
+        Talk to Us
         <svg viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -468,35 +474,43 @@
 <section class="lr-section lr-section-bordered lr-fade-in" style="background:var(--bg-light);">
   <div class="container" style="max-width:720px;">
     <div class="lr-section-header lr-section-header-center">
-      <h2 class="lr-section-heading">Don't Just Get Software. <span>Get Guidance.</span></h2>
-      <p class="lr-section-desc">Alongside the engineering, you get:</p>
+      <h2 class="lr-section-heading">Not Your Typical <span>Agency.</span></h2>
+      <p class="lr-section-desc">Founders have been burned before. We built our process to fix exactly that.</p>
     </div>
 
     <div style="background:var(--white);border:1px solid var(--border-color);border-radius:16px;overflow:hidden;">
-      <div style="display:flex;align-items:center;gap:12px;padding:20px 24px;border-bottom:1px solid var(--border-color);">
-        <svg style="width:18px;height:18px;flex-shrink:0;color:var(--accent-green);" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <p style="font-size:14px;color:var(--text-secondary);">Story templates</p>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:20px 24px;border-bottom:1px solid var(--border-color);">
+        <svg style="width:18px;height:18px;flex-shrink:0;color:var(--accent-green);margin-top:2px;" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <p style="font-size:14px;font-weight:500;color:var(--text-primary);">No vanishing after handoff</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin-top:2px;">We stay through launch and beyond. You get ongoing support as long as you need it.</p>
+        </div>
       </div>
-      <div style="display:flex;align-items:center;gap:12px;padding:20px 24px;border-bottom:1px solid var(--border-color);">
-        <svg style="width:18px;height:18px;flex-shrink:0;color:var(--accent-green);" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <p style="font-size:14px;color:var(--text-secondary);">Built-in best practices</p>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:20px 24px;border-bottom:1px solid var(--border-color);">
+        <svg style="width:18px;height:18px;flex-shrink:0;color:var(--accent-green);margin-top:2px;" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <p style="font-size:14px;font-weight:500;color:var(--text-primary);">No scope surprises</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin-top:2px;">Clear deliverables, weekly updates, and structured sprints. You always know what's being built and why.</p>
+        </div>
       </div>
-      <div style="display:flex;align-items:center;gap:12px;padding:20px 24px;border-bottom:1px solid var(--border-color);">
-        <svg style="width:18px;height:18px;flex-shrink:0;color:var(--accent-green);" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <p style="font-size:14px;color:var(--text-secondary);">Clear execution structure</p>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:20px 24px;border-bottom:1px solid var(--border-color);">
+        <svg style="width:18px;height:18px;flex-shrink:0;color:var(--accent-green);margin-top:2px;" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <p style="font-size:14px;font-weight:500;color:var(--text-primary);">No black-box process</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin-top:2px;">Full transparency into priorities, velocity, and decisions. You're a partner, not a ticket in a queue.</p>
+        </div>
       </div>
-      <div style="display:flex;align-items:center;gap:12px;padding:20px 24px;border-bottom:1px solid var(--border-color);">
-        <svg style="width:18px;height:18px;flex-shrink:0;color:var(--accent-green);" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <p style="font-size:14px;color:var(--text-secondary);">Founder-focused workflows</p>
-      </div>
-      <div style="display:flex;align-items:center;gap:12px;padding:20px 24px;">
-        <svg style="width:18px;height:18px;flex-shrink:0;color:var(--accent-green);" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <p style="font-size:14px;color:var(--text-secondary);">Guardrails against misalignment</p>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:20px 24px;">
+        <svg style="width:18px;height:18px;flex-shrink:0;color:var(--accent-green);margin-top:2px;" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <p style="font-size:14px;font-weight:500;color:var(--text-primary);">No tech debt left behind</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin-top:2px;">Clean, tested, documented code you can maintain yourself. We build to hand over, not to lock you in.</p>
+        </div>
       </div>
     </div>
 
     <p style="margin-top:40px;text-align:center;font-size:16px;color:var(--text-secondary);">
-      You're not just managing tickets. You're engineering execution.
+      We've worked with 50+ startups. We know what founders actually need.
     </p>
   </div>
 </section>
@@ -510,8 +524,8 @@
       If your goal is high ROI product development, start with structure.
     </p>
     <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin-top:32px;">
-      <a href="https://cal.com/neshaz/intro" target="_blank" class="lr-btn lr-btn-lg" style="background:var(--white);color:var(--text-primary);" data-umami-event="cta-schedule-call" data-umami-event-location="startups-final-cta">
-        Schedule a call
+      <a href="#" class="lr-btn lr-btn-lg" style="background:var(--white);color:var(--text-primary);" data-cal-link="neshaz/intro" data-cal-namespace="kolosek" data-cal-config='{"layout":"month_view"}' data-umami-event="cta-talk-to-us" data-umami-event-location="startups-final-cta">
+        Talk to Us
         <svg viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
