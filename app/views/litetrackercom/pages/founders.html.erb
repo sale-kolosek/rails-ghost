@@ -1,0 +1,253 @@
+<% content_for(:title) { "LiteTracker for Founders | Structured Execution for Serious Startups" } %>
+<% content_for(:description) { "Serious founders don't build on chaos. They build on structured, story-driven execution. The blueprint used by startups that actually ship." } %>
+
+<% content_for :cal_script do %>
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "litetracker", {origin:"https://cal.com"});
+    Cal.ns.litetracker("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+<% end %>
+
+<main>
+  <!-- 1. Hero Section -->
+  <section id="hero-section" class="bg-[#F6F6F8] relative px-6 lg:px-8 overflow-hidden">
+    <div class="z-10 relative mx-auto max-w-3xl flex flex-col items-center gap-6 py-20 md:py-28">
+      <div class="flex flex-col items-center gap-4 text-center">
+        <h1 class="text-4xl md:text-5xl md:leading-14 font-semibold tracking-tight text-gray-900 animate-blur-to-focus">
+          Serious Founders Don't<br>
+          Build on Chaos.
+        </h1>
+        <p class="max-w-xl text-base font-normal text-gray-500 sm:text-lg/8">
+          They build on structured, story-driven execution.<br>
+          This is the blueprint used by startups that actually ship.
+        </p>
+      </div>
+
+      <!-- Social proof -->
+      <p class="text-sm font-semibold text-gray-900">Millions of stories executed. Hundreds of startups built properly.</p>
+
+      <!-- CTA buttons -->
+      <div class="flex flex-col items-center gap-4 pt-2">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="<%= app_login_url_with_utm('https://app.litetracker.com/register') %>" class="bg-black w-fit flex items-center rounded-xl px-5 py-2.5 text-sm/6 font-semibold text-white border border-[#E6E6EB]" data-umami-event="signup-click" data-umami-event-location="founders-hero">
+            Start for $2 per user
+            <svg class="h-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z"/>
+              <polyline points="9 6 15 12 9 18" />
+            </svg>
+          </a>
+          <a href="#the-system" class="w-fit flex items-center rounded-xl px-5 py-2.5 text-sm/6 font-semibold text-black border border-[#E6E6EB] hover:bg-[#FAFAFA]" data-umami-event="cta-system" data-umami-event-location="founders-hero">
+            See the System
+            <svg class="h-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z"/>
+              <polyline points="9 6 15 12 9 18" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Two Types of Founders Section -->
+  <section class="relative px-6 lg:px-8 py-16 sm:py-24">
+    <div class="mx-auto max-w-4xl">
+      <div class="mx-auto max-w-xl flex flex-col gap-y-6 justify-center w-full text-center mb-16">
+        <h2 class="text-heading sm:text-5xl tracking-wide">
+          There Are Two Types of Founders
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- The Improviser -->
+        <div class="bg-white rounded-3xl p-8 border border-[#E6E6EB]">
+          <p class="text-sm font-semibold text-gray-900 mb-6">The Improviser</p>
+          <ul class="space-y-3 text-sm/6 text-gray-600">
+            <li class="flex gap-x-3">
+              <svg class="h-6 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+              </svg>
+              Starts coding immediately
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="h-6 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+              </svg>
+              Random backlog management
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="h-6 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+              </svg>
+              Features without narrative
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="h-6 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+              </svg>
+              Velocity without direction
+            </li>
+          </ul>
+        </div>
+
+        <!-- The Operator -->
+        <div class="bg-[#020a0f] rounded-3xl p-8 border border-[#020a0f]">
+          <p class="text-sm font-semibold text-white mb-6">The Operator</p>
+          <ul class="space-y-3 text-sm/6 text-gray-400">
+            <li class="flex gap-x-3">
+              <svg class="h-6 w-5 flex-none text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+              </svg>
+              Structured user stories
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="h-6 w-5 flex-none text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+              </svg>
+              Planned iterations
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="h-6 w-5 flex-none text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+              </svg>
+              Validation loops
+            </li>
+            <li class="flex gap-x-3">
+              <svg class="h-6 w-5 flex-none text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+              </svg>
+              Measurable progress
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="mt-12 text-center text-lg font-semibold text-gray-900">
+        Execution discipline separates startups from side projects.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. Execution System Section -->
+  <section id="the-system" class="bg-[#F6F6F8] relative px-6 lg:px-8 py-16 sm:py-24">
+    <div class="mx-auto max-w-3xl">
+      <div class="mx-auto max-w-xl flex flex-col gap-y-6 justify-center w-full text-center mb-12">
+        <h2 class="text-heading sm:text-5xl tracking-wide">
+          This Isn't Just Ticketing.<br>
+          It's an Execution System.
+        </h2>
+      </div>
+
+      <div class="bg-white rounded-3xl border border-[#E6E6EB] divide-y divide-[#E6E6EB]">
+        <div class="flex gap-x-3 p-6">
+          <svg class="h-6 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+          </svg>
+          <p class="text-sm text-gray-600">Story-driven workflow</p>
+        </div>
+        <div class="flex gap-x-3 p-6">
+          <svg class="h-6 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+          </svg>
+          <p class="text-sm text-gray-600">Built-in iteration structure</p>
+        </div>
+        <div class="flex gap-x-3 p-6">
+          <svg class="h-6 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+          </svg>
+          <p class="text-sm text-gray-600">Startup blueprint</p>
+        </div>
+        <div class="flex gap-x-3 p-6">
+          <svg class="h-6 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+          </svg>
+          <p class="text-sm text-gray-600">Guided help</p>
+        </div>
+        <div class="flex gap-x-3 p-6">
+          <svg class="h-6 w-5 flex-none text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+          </svg>
+          <p class="text-sm text-gray-600">AI-compatible discipline</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. AI + Structure Section -->
+  <section class="relative px-6 lg:px-8 py-16 sm:py-24">
+    <div class="mx-auto max-w-3xl">
+      <div class="mx-auto max-w-xl flex flex-col gap-y-6 justify-center w-full text-center">
+        <h2 class="text-heading sm:text-5xl tracking-wide">
+          AI Makes Shipping Easy.<br>
+          Structure Makes It Scalable.
+        </h2>
+        <p class="text-base font-normal text-gray-500 sm:text-lg/8">
+          Anyone can generate code. Few can build systems.
+        </p>
+        <p class="text-lg font-semibold text-gray-900">
+          Serious founders combine AI speed with disciplined execution.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Pricing Section -->
+  <section class="bg-[#F6F6F8] relative px-6 lg:px-8 py-16 sm:py-24">
+    <div class="mx-auto max-w-xl">
+      <div class="flex flex-col gap-y-6 justify-center w-full text-center mb-12">
+        <h2 class="text-heading sm:text-5xl tracking-wide">
+          Start Small. Commit Like a Builder.
+        </h2>
+      </div>
+
+      <div class="bg-white rounded-3xl p-10 border border-[#E6E6EB] text-center">
+        <p class="flex items-baseline justify-center gap-x-1">
+          <span class="text-4xl font-semibold tracking-tight text-gray-900">$2</span>
+          <span class="text-sm/6 font-semibold text-gray-600">/user/mo</span>
+        </p>
+        <p class="mt-1 text-sm text-gray-500">first month</p>
+        <div class="h-px bg-[#E6E6EB] my-6"></div>
+        <p class="flex items-baseline justify-center gap-x-1">
+          <span class="text-2xl font-semibold tracking-tight text-gray-900">$10</span>
+          <span class="text-sm/6 font-semibold text-gray-600">/user/mo</span>
+        </p>
+        <p class="mt-1 text-sm text-gray-500">billed yearly after</p>
+        <div class="h-px bg-[#E6E6EB] my-6"></div>
+        <p class="text-sm italic text-gray-500">If you're building for real, this is negligible.</p>
+        <a href="<%= app_login_url_with_utm('https://app.litetracker.com/register') %>" class="bg-black w-fit mx-auto flex items-center mt-8 rounded-xl px-5 py-2.5 text-sm/6 font-semibold text-white border border-[#E6E6EB]" data-umami-event="signup-click" data-umami-event-location="founders-pricing">
+          Start Building Properly
+          <svg class="h-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z"/>
+            <polyline points="9 6 15 12 9 18" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Final CTA Section -->
+  <section class="bg-[#020a0f] relative px-6 lg:px-8 py-16 sm:py-24">
+    <div class="mx-auto max-w-xl flex flex-col gap-y-6 justify-center w-full text-center">
+      <h2 class="text-4xl sm:text-5xl font-semibold tracking-wide text-white">
+        Your Startup Deserves<br>
+        Professional Execution.
+      </h2>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        <a href="<%= app_login_url_with_utm('https://app.litetracker.com/register') %>" class="bg-white w-fit flex items-center rounded-xl px-5 py-2.5 text-sm/6 font-semibold text-[#020a0f]" data-umami-event="signup-click" data-umami-event-location="founders-final-cta">
+          Start for $2 per user
+          <svg class="h-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z"/>
+            <polyline points="9 6 15 12 9 18" />
+          </svg>
+        </a>
+        <a href="#" class="w-fit flex items-center rounded-xl px-5 py-2.5 text-sm/6 font-semibold text-white border border-gray-600 hover:bg-white/10" data-cal-link="neshaz/litetracker" data-cal-namespace="litetracker" data-cal-config='{"layout":"month_view"}' data-umami-event="cta-demo" data-umami-event-location="founders-final-cta">
+          Talk to Human
+          <svg class="h-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z"/>
+            <polyline points="9 6 15 12 9 18" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
