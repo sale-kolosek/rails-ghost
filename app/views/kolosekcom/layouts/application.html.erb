@@ -12,6 +12,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/files/kolosekcom.css">
   <%= stylesheet_link_tag '/css/ghost.min.css', media: 'all', "data-turbo-track": "reload" %>
+  <%= raw @settings['codeinjection_head'] %>
+
+  <%= raw @header_script if @header_script.present? %>
 </head>
 <body>
   <%= render "kolosekcom/partials/header" %>
@@ -19,5 +22,8 @@
   <%= render "kolosekcom/partials/footer" %>
 
   <script src="/files/kolosekcom.js"></script>
+  
+  <%= raw @settings['codeinjection_foot'] %>
+  <%= raw @footer_script if @footer_script.present? %>
 </body>
 </html>
