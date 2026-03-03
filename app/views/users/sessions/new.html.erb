@@ -1,0 +1,49 @@
+<% content_for(:title) { "Log in" } %>
+
+<header class="main-content__header">
+  <h1 class="main-content__page-title">Log in</h1>
+</header>
+
+<section class="main-content__body main-content__body--flush">
+  <form class="form" action="<%= session_path(resource_name) %>" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+    <div class="field-unit">
+      <div class="field-unit__label">
+        <label for="user_email">Email</label>
+      </div>
+      <div class="field-unit__field">
+        <input autofocus="autofocus" autocomplete="email" class="field-unit__text-field" type="email" name="user[email]" id="user_email" />
+      </div>
+    </div>
+
+    <div class="field-unit">
+      <div class="field-unit__label">
+        <label for="user_password">Password</label>
+      </div>
+      <div class="field-unit__field">
+        <input autocomplete="current-password" class="field-unit__text-field" type="password" name="user[password]" id="user_password" />
+      </div>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field-unit">
+        <div class="field-unit__label"></div>
+        <div class="field-unit__field">
+          <label>
+            <input type="checkbox" name="user[remember_me]" id="user_remember_me" value="1" />
+            Remember me
+          </label>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="form-actions">
+      <input type="submit" name="commit" value="Log in" class="button" />
+    </div>
+  </form>
+
+  <div style="padding: 1rem 2rem;">
+    <%= render "devise/shared/links" %>
+  </div>
+</section>

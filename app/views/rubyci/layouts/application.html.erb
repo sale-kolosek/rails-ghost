@@ -52,6 +52,7 @@
     <%#= render 'layouts/partials/top' %>
     <%= render 'rubyci/layouts/partials/header' %>
     <div class="page-wrapper">
+      <%= render "shared/flash" %>
       <%= yield %>
       <%= render 'rubyci/layouts/partials/footer' %>
     </div>

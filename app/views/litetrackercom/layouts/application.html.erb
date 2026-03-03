@@ -208,6 +208,7 @@
           <%= render 'phrasing/initializer' %>
         </div>
         <%= render 'litetrackercom/layouts/partials/header' %>
+        <%= render "shared/flash" %>
         <%= yield %>
         <%= content_for?(:footer) ? yield(:footer) : render('litetrackercom/layouts/partials/footer') %>
       </div>

@@ -1,0 +1,46 @@
+<% content_for(:title) { "Sign up" } %>
+
+<header class="main-content__header">
+  <h1 class="main-content__page-title">Sign up</h1>
+</header>
+
+<section class="main-content__body main-content__body--flush">
+  <form class="form" action="<%= registration_path(resource_name) %>" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+    <div class="field-unit">
+      <div class="field-unit__label">
+        <label for="user_email">Email</label>
+      </div>
+      <div class="field-unit__field">
+        <input autofocus="autofocus" autocomplete="email" class="field-unit__text-field" type="email" name="user[email]" id="user_email" />
+      </div>
+    </div>
+
+    <div class="field-unit">
+      <div class="field-unit__label">
+        <label for="user_password">Password</label>
+      </div>
+      <div class="field-unit__field">
+        <input autocomplete="new-password" class="field-unit__text-field" type="password" name="user[password]" id="user_password" />
+      </div>
+    </div>
+
+    <div class="field-unit">
+      <div class="field-unit__label">
+        <label for="user_password_confirmation">Password confirmation</label>
+      </div>
+      <div class="field-unit__field">
+        <input autocomplete="new-password" class="field-unit__text-field" type="password" name="user[password_confirmation]" id="user_password_confirmation" />
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <input type="submit" name="commit" value="Sign up" class="button" />
+    </div>
+  </form>
+
+  <div style="padding: 1rem 2rem;">
+    <%= render "devise/shared/links" %>
+  </div>
+</section>

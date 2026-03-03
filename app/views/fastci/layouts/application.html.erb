@@ -19,6 +19,7 @@
 
   <body class="relative">
     <%= render 'fastci/layouts/partials/header' %>
+    <%= render "shared/flash" %>
     <%= yield %>
     <%= render 'fastci/layouts/partials/footer' %>
     <%= raw @footer_script if @footer_script.present? %>
