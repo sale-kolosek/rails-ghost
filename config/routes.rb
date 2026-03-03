@@ -6,13 +6,9 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  authenticate :user, ->(u) { u.admin? } do
-    get  'admin/scripts',       to: 'scripts#index',  as: :scripts
-    patch 'admin/scripts/update', to: 'scripts#update', as: :update_script
-  end
-
   namespace :admin do
-    resources :page_metadata, except: :show
+    resources :forms
+    root to: "forms#index"
   end
   
   resources :forms, only: [:create]

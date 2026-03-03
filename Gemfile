@@ -69,6 +69,8 @@ gem 'phrasing'
 
 gem 'devise'
 
+gem 'administrate'
+
 # For loading config yml to object
 gem "hashr"
 
