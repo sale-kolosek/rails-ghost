@@ -9,7 +9,7 @@ class FormDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    data: Field::String.with_options(searchable: false),
+    data: JsonTooltipField,
     email: Field::String,
     form_type: Field::String,
     name: Field::String,
@@ -28,6 +28,7 @@ class FormDashboard < Administrate::BaseDashboard
     form_type
     name
     email
+    data
     created_at
   ].freeze
 
