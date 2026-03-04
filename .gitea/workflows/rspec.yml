@@ -8,6 +8,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ci_node_index: [0, 1]
+        ci_node_total: [2]
 
     services:
       postgres:
@@ -45,5 +50,8 @@ jobs:
       - name: Set up database
         run: bin/rails db:create db:schema:load
 
-      - name: Run RSpec
-        run: bundle exec rspec
+      - name: Split and run RSpec
+        run: |
+          FILES=$(find spec -name '*_spec.rb' | sort | awk "NR % ${{ matrix.ci_node_total }} == ${{ matrix.ci_node_index }}")
+          echo "Running: $FILES"
+          bundle exec rspec $FILES
