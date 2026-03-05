@@ -6,8 +6,26 @@ on:
       - '**'
 
 jobs:
-  test:
+  setup:
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3.0'
+          bundler-cache: true
+
+  test:
+    needs: setup
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ci_node_index: [0, 1, 2]
+        ci_node_total: [3]
 
     services:
       postgres:
@@ -16,8 +34,6 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: rubyci_homepage_test
-        ports:
-          - 5432:5432
         options: >-
           --health-cmd "pg_isready -U postgres"
           --health-interval 10s
@@ -30,13 +46,21 @@ jobs:
       DB_USERNAME: postgres
       DB_PASSWORD: postgres
       DB_HOST: postgres
-      DB_PORT: 5432
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        id: setup-ruby
+        continue-on-error: true
+        with:
+          ruby-version: '3.3.0'
+          bundler-cache: true
+
+      - name: Retry Set up Ruby
+        if: steps.setup-ruby.outcome == 'failure'
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3.0'
@@ -45,5 +69,8 @@ jobs:
       - name: Set up database
         run: bin/rails db:create db:schema:load
 
-      - name: Run RSpec
-        run: bundle exec rspec
+      - name: Split and run RSpec
+        run: |
+          FILES=$(find spec -name '*_spec.rb' | sort | awk "NR % ${{ matrix.ci_node_total }} == ${{ matrix.ci_node_index }}")
+          echo "Running: $FILES"
+          bundle exec rspec $FILES
