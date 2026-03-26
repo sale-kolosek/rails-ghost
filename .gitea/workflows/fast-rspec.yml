@@ -70,13 +70,7 @@
           run: bin/rails db:create db:schema:load
 
         - name: Split and run RSpec
-          shell: bash
           run: |
             FILES=$(find spec -name '*_spec.rb' | sort | awk "NR % ${{ matrix.ci_node_total }} == ${{ matrix.ci_node_index }}")
             echo "Running: $FILES"
-            set +e
-            bundle exec rspec --format documentation $FILES 2>&1
-            RSPEC_EXIT=$?
-            echo ""
-            echo "RSpec exited with code: $RSPEC_EXIT"
-            exit $RSPEC_EXIT
+            bundle exec rspec $FILES
